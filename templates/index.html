@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://poonawallafincorp.com/pfca/assets/og_image/og_image-pl-technology-og.jpg'); /* Replace with the actual path to your background image */
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+.container {
+            max-width: 600px;
+            margin: 50px auto;
+            margin-left: 50px;  /* Set left margin to auto */
+            margin-right: auto;  /* Optional: Add some right margin for spacing */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: rgb(18, 10, 45); /* Semi-transparent background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+h1 {
+    text-align: center;
+    color: #fcfcfc;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+input, select {
+    margin-bottom: 15px;
+    padding: 8px;
+}
+
+button {
+    padding: 10px;
+    background-color: #06b9ea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #1fc1e1;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+    <title>Personal Loan Prediction</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Personal Loan Prediction</h1>
+        <form action="/" method="post">
+            <label for="education">Education:</label>
+            <select name="education" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label for="self_employed">Self Employed:</label>
+            <select name="self_employed" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label for="income">Income Annum:</label>
+            <input type="number" name="income" required>
+
+            <label for="loan_amount">Loan Amount:</label>
+            <input type="number" name="loan_amount" required>
+
+            <label for="cibil_score">Cibil Score:</label>
+            <input type="number" name="cibil_score" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction is not none %}
+            <h2>Loan is {% if prediction == 0 %}accepted{% else %}rejected{% endif %}.</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
